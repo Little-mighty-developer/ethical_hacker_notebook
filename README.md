@@ -4,6 +4,34 @@ Welcome to my Ethical Hacker Notebook — a living, evolving journal of everythi
 
 This is my personal lab, second brain, and roadmap for becoming a white hat hacker. It's a mix of hands-on practice, tool walkthroughs, theoretical concepts, and reflections from courses, CTFs, and real-world exercises.
 
+
+# 📊 Developer Experience Metrics
+
+**Last updated:** 2025-06-17
+
+| Metric                      | Value        | Notes |
+|-----------------------------|--------------|-------|
+| 🔁 Avg PR Size              | 601.0 LOC | Lines of code added/removed |
+| ⏱️ Avg Time to Review       | N/A hours | From PR open to first comment |
+| 🧵 Avg Time to Merge         | 9.1 hours | From PR open to merge |
+| ⚠️ % Merged Without Review  | 100.0% | PRs with 0 comments |
+| 🚑 Last Incident Recovery   | —            | Manually filled |
+| 🧠 DX Label Trends          | —            | Labels like `dx:blocked` |
+
+
+**Last updated:** _2025-06-17_
+
+| Metric                      | Value        | Notes |
+|-----------------------------|--------------|-------|
+| 🔁 Avg PR Size              | —            | Lines of code added/removed |
+| ⏱️ Avg Time to Review       | —            | From PR open to first comment |
+| 🧵 Avg Time to Merge         | —            | From PR open to merge |
+| ⚠️ % Merged Without Review  | —            | PRs with 0 comments |
+| 🚑 Last Incident Recovery   | —            | If you use incident tagging |
+| 🧠 DX Label Trends          | —            | Labels like `dx:blocked` |
+
+
+
 ---
 
 ## 📌 Purpose
