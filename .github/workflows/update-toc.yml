@@ -1,0 +1,47 @@
+name: Update TOC on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  update-toc:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run tests
+        run: |
+          cd .github/scripts
+          python -m unittest test_update_toc.py -v
+
+      - name: Run TOC update script
+        run: |
+          python .github/scripts/update_toc.py
+          
+      - name: Commit and push TOC
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          # Ignore Python cache files
+          echo "__pycache__/" >> .gitignore
+          # Add and commit only the table of contents file
+          git add table_of_contents.md
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "auto: update TOC on PR"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
