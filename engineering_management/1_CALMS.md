@@ -1,12 +1,12 @@
 # 📘 Lesson 1: CALMS Framework — Building Blocks of DevOps
 
-![CALMS Framework Overview](CALMS.png)
+
 
 ## 🧠 Start Here: What Does a DevOps-Ready Team *Feel* Like?
 
 Ask yourself:
 
-- What's more important — tools or team culture?
+- What’s more important — tools or team culture?
 - When do automation and trust collide?
 - How can you tell if a team is *actually* lean, or just doing more with less?
 - Can collaboration be measured?
@@ -27,13 +27,13 @@ If you're not sure how to answer all of these, you're not alone — and that's w
 
 Each pillar is a critical part of building high-performing, collaborative, and resilient software teams.
 
-We'll explore each one through the lens of our metaphorical software bakery 🍰
+We’ll explore each one through the lens of our metaphorical software bakery 🍰
 
 ---
 
 ## 🧑‍🍳 C — Culture
 
-Culture is the heartbeat of DevOps. It's about how your team treats mistakes, how information flows, and how decisions are made.
+Culture is the heartbeat of DevOps. It’s about how your team treats mistakes, how information flows, and how decisions are made.
 
 ### What to Measure & How to Evaluate
 - Is failure tolerated as part of learning?
@@ -79,12 +79,12 @@ Automation is the nervous system of DevOps — it moves things quickly, safely, 
 Imagine manually lighting the oven each time, guessing temperatures, and hoping for the best. Automation is your programmable oven — precise, reliable, and repeatable.
 
 **Thinking question**:  
-> What's one manual task you touch every week that should be automated?
+> What’s one manual task you touch every week that should be automated?
 
 ---
 
 ## 🤖 AI in Automation
-AI can write scripts, generate test cases, and help configure pipelines — but it's your *judgment* that decides what's worth automating. Don't let automation become cargo cult coding.
+AI can write scripts, generate test cases, and help configure pipelines — but it’s your *judgment* that decides what’s worth automating. Don’t let automation become cargo cult coding.
 
 ---
 
@@ -103,7 +103,7 @@ Lean means working smarter — reducing waste, optimizing flow, and focusing on 
 - [ ] Adopt value stream mapping.
 
 ### 🍩 Bakery Example
-If your bakers spend 4 hours decorating a cake that never sells, that's wasted effort. Lean means testing cupcake versions and iterating based on customer demand.
+If your bakers spend 4 hours decorating a cake that never sells, that’s wasted effort. Lean means testing cupcake versions and iterating based on customer demand.
 
 **Thinking question**:  
 > What could you stop doing today that no one would notice?
@@ -111,7 +111,7 @@ If your bakers spend 4 hours decorating a cake that never sells, that's wasted e
 ---
 
 ## 🤖 AI in Lean
-LLMs help teams explore hypotheses faster — e.g., "draft a prototype script for X" — but AI also generates *noise*. Lean teams must filter signal from suggestion.
+LLMs help teams explore hypotheses faster — e.g., “draft a prototype script for X” — but AI also generates *noise*. Lean teams must filter signal from suggestion.
 
 ---
 
@@ -130,7 +130,7 @@ Measurement turns assumptions into insight. What gets measured gets improved —
 - [ ] Measure both technical and human impact.
 
 ### 🍩 Bakery Example
-Guessing how many croissants sold last week? That's gut feeling. Knowing *which recipe*, *what time*, and *from which location*? That's measurement.
+Guessing how many croissants sold last week? That’s gut feeling. Knowing *which recipe*, *what time*, and *from which location*? That’s measurement.
 
 **Thinking question**:  
 > What metric does your team use most — and does it drive behavior you want?
@@ -138,7 +138,7 @@ Guessing how many croissants sold last week? That's gut feeling. Knowing *which 
 ---
 
 ## 🤖 AI in Measurement
-AI tools like Dynatrace or Datadog's Watchdog use anomaly detection and pattern recognition to surface *what you didn't even know to look for*. That's the future of observability.
+AI tools like Dynatrace or Datadog’s Watchdog use anomaly detection and pattern recognition to surface *what you didn’t even know to look for*. That’s the future of observability.
 
 ---
 
@@ -165,14 +165,14 @@ If one baker guards the secret sourdough recipe and takes a day off, the busines
 ---
 
 ## 🤖 AI in Sharing
-AI tools can instantly turn a voice memo or Slack conversation into a clean doc. You still need to *choose* what's worth sharing — and ensure it's findable.
+AI tools can instantly turn a voice memo or Slack conversation into a clean doc. You still need to *choose* what’s worth sharing — and ensure it’s findable.
 
 ---
 
 ## 🧭 Wrapping Up: What Have You Learned?
 
 ✅ The 5 pillars of the CALMS Framework  
-✅ Why DevOps is more than tools — it's mindset and habits  
+✅ Why DevOps is more than tools — it’s mindset and habits  
 ✅ How a bakery (or your team) can improve flow, resilience, and collaboration  
 ✅ How AI is shaping — and being shaped by — modern DevOps culture
 

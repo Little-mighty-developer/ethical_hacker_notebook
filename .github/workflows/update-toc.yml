@@ -1,0 +1,39 @@
+name: Update Table of Contents
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '!README.md'
+      - '!.github/**'
+
+jobs:
+  update-toc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install gitpython
+
+      - name: Update TOC
+        run: |
+          python .github/scripts/update_toc.py
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "docs: update table of contents"
+          title: "📚 Update Table of Contents"
+          body: "Automated update of the table of contents based on new content."
+          branch: update-toc
+          base: main 
