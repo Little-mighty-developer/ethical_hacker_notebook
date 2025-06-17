@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,6 +31,10 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
+          # Ignore Python cache files
+          echo "__pycache__/" >> .gitignore
+          # Add and commit only the table of contents file
           git add table_of_contents.md
-          git commit -m "auto: update TOC on PR"
-          git push
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "auto: update TOC on PR"
+          git push origin HEAD:${{ github.head_ref }}
