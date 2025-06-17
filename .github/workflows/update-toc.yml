@@ -16,6 +16,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Run tests
+        run: |
+          cd .github/scripts
+          python -m unittest test_update_toc.py -v
+
       - name: Run TOC update script
         run: |
           python .github/scripts/update_toc.py
