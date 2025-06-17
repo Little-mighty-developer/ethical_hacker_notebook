@@ -1,39 +1,24 @@
-name: Update Table of Contents
+name: Update TOC on PR
 
 on:
-  push:
-    paths:
-      - '**/*.md'
-      - '!README.md'
-      - '!.github/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   update-toc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
+      - name: Run TOC update script
         run: |
-          python -m pip install --upgrade pip
-          pip install gitpython
-
-      - name: Update TOC
+          python scripts/update_toc.py
+          
+      - name: Commit and push TOC
         run: |
-          python .github/scripts/update_toc.py
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          commit-message: "docs: update table of contents"
-          title: "📚 Update Table of Contents"
-          body: "Automated update of the table of contents based on new content."
-          branch: update-toc
-          base: main 
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add table-of-contents.md
+          git commit -m "auto: update TOC on PR"
+          git push
