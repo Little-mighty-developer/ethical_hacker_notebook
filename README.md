@@ -1,4 +1,7 @@
-# 🛡️ Ethical Hacker Notebook
+# 🛡️ Ethical Hacker Notebook 
+[![Maintainability](https://qlty.sh/badges/db729f8c-6c14-46a7-8f31-09f46c0a91a3/maintainability.svg)](https://qlty.sh/gh/Little-mighty-developer/projects/ethical_hacker_notebook)
+
+[![Code Coverage](https://qlty.sh/badges/db729f8c-6c14-46a7-8f31-09f46c0a91a3/test_coverage.svg)](https://qlty.sh/gh/Little-mighty-developer/projects/ethical_hacker_notebook)
 
 Welcome to my Ethical Hacker Notebook — a living, evolving journal of everything I'm learning on my path to mastering cybersecurity, ethical hacking, and DevSecOps.
 
