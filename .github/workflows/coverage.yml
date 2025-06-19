@@ -40,3 +40,5 @@ jobs:
         run: black --check .github/scripts/
       - name: Run Flake8
         run: flake8 .github/scripts/
+      - name: Run Bandit security checks
+        run: bandit -r .github/scripts/ -c .bandit.yaml

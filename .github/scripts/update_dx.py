@@ -8,7 +8,7 @@ REPO = "Little-mighty-developer/ethical_hacker_notebook"
 headers = {"Authorization": f"Bearer {TOKEN}"}
 api_url = f"https://api.github.com/repos/{REPO}/pulls?state=closed&per_page=100"
 
-response = requests.get(api_url, headers=headers)
+response = requests.get(api_url, headers=headers, timeout=30)
 pulls = response.json()
 
 print(pulls)
@@ -26,14 +26,14 @@ count = 0
 for pr in pulls:
     if pr.get("merged_at"):
         count += 1
-        pr_details = requests.get(pr["url"], headers=headers).json()
+        pr_details = requests.get(pr["url"], headers=headers, timeout=30).json()
         total_lines += pr_details["additions"] + pr_details["deletions"]
         created = datetime.fromisoformat(pr["created_at"][:-1])
         merged = datetime.fromisoformat(pr["merged_at"][:-1])
         merge_times.append((merged - created).total_seconds() / 3600)
 
         reviews_url = pr["_links"]["review_comments"]["href"]
-        reviews = requests.get(reviews_url, headers=headers).json()
+        reviews = requests.get(reviews_url, headers=headers, timeout=30).json()
         if reviews:
             first_review_time = datetime.fromisoformat(reviews[0]["created_at"][:-1])
             review_times.append((first_review_time - created).total_seconds() / 3600)
