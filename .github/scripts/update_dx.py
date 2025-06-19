@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 import os
+
 TOKEN = os.getenv("GH_TOKEN")
 REPO = "Little-mighty-developer/ethical_hacker_notebook"
 
@@ -25,7 +26,7 @@ count = 0
 for pr in pulls:
     if pr.get("merged_at"):
         count += 1
-        pr_details = requests.get(pr['url'], headers=headers).json()
+        pr_details = requests.get(pr["url"], headers=headers).json()
         total_lines += pr_details["additions"] + pr_details["deletions"]
         created = datetime.fromisoformat(pr["created_at"][:-1])
         merged = datetime.fromisoformat(pr["merged_at"][:-1])
@@ -41,7 +42,9 @@ for pr in pulls:
 
 avg_pr_size = round(total_lines / count, 1)
 avg_merge_time = round(sum(merge_times) / len(merge_times), 1)
-avg_review_time = round(sum(review_times) / len(review_times), 1) if review_times else "N/A"
+avg_review_time = (
+    round(sum(review_times) / len(review_times), 1) if review_times else "N/A"
+)
 unreviewed_pct = round((unreviewed / count) * 100, 1)
 
 metrics = f"""
@@ -51,8 +54,8 @@ metrics = f"""
 | Metric                      | Value        | Notes |
 |-----------------------------|--------------|-------|
 | 🔁 Avg PR Size              | {avg_pr_size} LOC | Lines of code added/removed |
-| ⏱️ Avg Time to Review       | {avg_review_time} hours | From PR open to first comment |
-| 🧵 Avg Time to Merge         | {avg_merge_time} hours | From PR open to merge |
+| ⏱️ Avg Time to Review       | {avg_review_time} hours | Time to first comment |
+| 🧵 Avg Time to Merge        | {avg_merge_time} hours | From PR open to merge |
 | ⚠️ % Merged Without Review  | {unreviewed_pct}% | PRs with 0 comments |
 | 🚑 Last Incident Recovery   | —            | Manually filled |
 | 🧠 DX Label Trends          | —            | Labels like `dx:blocked` |

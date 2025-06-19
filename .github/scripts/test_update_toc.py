@@ -5,6 +5,7 @@ import shutil
 import os
 from update_toc import extract_title_from_md
 
+
 class TestUpdateTOC(unittest.TestCase):
     def setUp(self):
         # Create a temporary directory for test files
@@ -27,24 +28,24 @@ class TestUpdateTOC(unittest.TestCase):
         ]
 
         for content, expected_title in test_cases:
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
+            with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
                 f.write(content)
-            
+
             result = extract_title_from_md(f.name)
             os.unlink(f.name)  # Clean up temp file
-            
+
             self.assertEqual(result, expected_title)
 
     def test_file_with_no_read_permission(self):
         # Test handling of files that can't be read
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False) as f:
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False) as f:
             f.write("# Test Title")
-        
+
         os.chmod(f.name, 0o000)  # Remove read permissions
         result = extract_title_from_md(f.name)
         os.chmod(f.name, 0o666)  # Restore permissions for cleanup
         os.unlink(f.name)
-        
+
         self.assertIsNone(result)
 
     def test_with_sample_files(self):
@@ -57,21 +58,20 @@ class TestUpdateTOC(unittest.TestCase):
 
         for filename, content in files_content.items():
             file_path = self.eng_mgmt_dir / filename
-            with open(file_path, 'w') as f:
+            with open(file_path, "w") as f:
                 f.write(content)
 
         # Test each file
         self.assertEqual(
             extract_title_from_md(self.eng_mgmt_dir / "1_CALMS.md"),
-            "📘 Lesson 1: CALMS Framework"
+            "📘 Lesson 1: CALMS Framework",
         )
         self.assertEqual(
             extract_title_from_md(self.eng_mgmt_dir / "2_DevOps.md"),
-            "Lesson 2: DevOps Practices"
+            "Lesson 2: DevOps Practices",
         )
-        self.assertIsNone(
-            extract_title_from_md(self.eng_mgmt_dir / "no_title.md")
-        )
+        self.assertIsNone(extract_title_from_md(self.eng_mgmt_dir / "no_title.md"))
 
-if __name__ == '__main__':
-    unittest.main() 
+
+if __name__ == "__main__":
+    unittest.main()

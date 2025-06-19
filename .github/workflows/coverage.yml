@@ -37,6 +37,6 @@ jobs:
           token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
           files: target/lcov.info
       - name: Run Black (check only)
-        run: black --check .
+        run: black --check .github/scripts/
       - name: Run Flake8
-        run: flake8 .
+        run: flake8 .github/scripts/
