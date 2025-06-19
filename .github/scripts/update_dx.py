@@ -49,7 +49,7 @@ unreviewed_pct = round((unreviewed / count) * 100, 1)
 
 metrics = f"""
 
-**Last updated:** {datetime.now().strftime('%Y-%m-%d')}
+**Last updated:** {datetime.now().strftime("%Y-%m-%d")}
 
 | Metric                      | Value        | Notes |
 |-----------------------------|--------------|-------|
