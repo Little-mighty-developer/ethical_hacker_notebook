@@ -4,8 +4,13 @@ Welcome to my Ethical Hacker Notebook — a living, evolving journal of everythi
 
 This is my personal lab, second brain, and roadmap for becoming a white hat hacker. It's a mix of hands-on practice, tool walkthroughs, theoretical concepts, and reflections from courses, CTFs, and real-world exercises.
 
+[![Maintainability](https://qlty.sh/badges/db729f8c-6c14-46a7-8f31-09f46c0a91a3/maintainability.svg)](https://qlty.sh/gh/Little-mighty-developer/projects/ethical_hacker_notebook)
+
+[![Code Coverage](https://qlty.sh/badges/db729f8c-6c14-46a7-8f31-09f46c0a91a3/test_coverage.svg)](https://qlty.sh/gh/Little-mighty-developer/projects/ethical_hacker_notebook)
+
 
 # 📊 Developer Experience Metrics
+
 
 **Last updated:** 2025-06-17
 

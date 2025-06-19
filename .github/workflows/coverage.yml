@@ -1,0 +1,44 @@
+name: QLTY Coverage Report
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Python tests with coverage
+        run: |
+          # Run tests with coverage
+          coverage run -m pytest .github/scripts/test_update_toc.py -v
+          # Generate coverage reports
+          coverage report
+          coverage html
+          coverage xml
+          # Generate lcov.info file
+          coverage lcov -o target/lcov.info
+      - uses: qltysh/qlty-action/coverage@v1
+        with:
+          token: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          files: target/lcov.info
+      - name: Run Black (check only)
+        run: black --check .github/scripts/
+      - name: Run Flake8
+        run: flake8 .github/scripts/
+      - name: Run Bandit security checks
+        run: bandit -r .github/scripts/ -c .bandit.yaml
