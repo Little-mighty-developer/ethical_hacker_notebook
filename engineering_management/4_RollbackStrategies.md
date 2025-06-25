@@ -105,6 +105,6 @@ Roll forward when possible, but if needed:
 You test a new raspberry cheesecake formula in one neighborhood (canary), but the online reviews are brutal. Your system quietly swaps it out with the OG strawberry bestseller and alerts you with analytics — *without you leaving the kitchen*.
 
 ---
-* * * * *
+
 
 📝 A little extra treat by **LittleMightyDeveloper** 🧁 because I was confused / curious
