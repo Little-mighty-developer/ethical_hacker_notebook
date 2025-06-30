@@ -74,21 +74,17 @@ You can track all modules, mini-projects, and milestones via the [📋 GitHub Pr
 ## 📂 Repo Structure
 
 ethical-hacker-notebook/
-├── README.md ← You're here!
-├── projects/ ← Projects board link or JSON
+├── README.md                ← You're here!
+├── projects/                ← Projects board link or JSON
 ├── modules/
-│ ├── networking/ ← Notes, diagrams, tools
-│ ├── web-security/ ← OWASP, XSS, SQLi, CSRF
-│ ├── tools/ ← Burp, Nmap, Wireshark
-│ ├── tryhackme/ ← Writeups + reflections
-│ ├── cloud-security/
-│ └── devsecops/
-├── scripts/ ← Bash or Python tools I build
-└── resources.md ← Courses, videos, blogs
-
-yaml
-Copy
-Edit
+│   ├── networking/          ← Notes, diagrams, tools
+│   ├── web-security/        ← OWASP, XSS, SQLi, CSRF
+│   ├── tools/               ← Burp, Nmap, Wireshark
+│   ├── tryhackme/           ← Writeups + reflections
+│   ├── cloud-security/
+│   └── devsecops/
+├── scripts/                 ← Bash or Python tools I build
+└── resources.md             ← Courses, videos, blogs
 
 ---
 
@@ -98,7 +94,7 @@ Each module includes:
 - Summary of key concepts
 - Screenshots or diagrams
 - Lab walkthroughs or CTFs
-- Reflections on what clicked / what didn’t
+- Reflections on what clicked / what didn't
 - Tools and commands cheat sheets
 
 ---
